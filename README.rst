@@ -35,7 +35,7 @@ Settings
 ``DJVERSION_UPDATED``
     Contains project update date or datetime. Defaults to ``None``.
 
-``DJVERSION_UPDATED``
+``DJVERSION_FORMAT_STRING``
     Contains version and updated format string. Defaults to ``"{version} ({updated})"``.
 
 Usage
