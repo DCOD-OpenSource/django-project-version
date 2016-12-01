@@ -4,10 +4,14 @@
 # django-project-version
 # setup.py
 
-from setuptools import setup, find_packages
+from setuptools import (
+    setup,
+    find_packages,
+)
+
 
 # metadata
-VERSION = (0, 1, 1)
+VERSION = (0, 2, 0)
 __version__ = ".".join(map(str, VERSION))
 
 setup(
@@ -19,8 +23,8 @@ setup(
     author_email="vint21h@vint21h.pp.ua",
     description="Django reusable app to show your project version",
     license="MIT",
-    url="https://github.com/DCOD-OpenSource/django-project-version",
-    download_url="https://github.com/DCOD-OpenSource/django-project-version/archive/{version}.tar.gz".format(version= __version__),
+    url="https://github.com/DCOD-OpenSource/django-project-version/",
+    download_url="https://github.com/DCOD-OpenSource/django-project-version/archive/{version}.tar.gz".format(**{"version": __version__, }),
     zip_safe=False,
     include_package_data=True,
     classifiers=[
