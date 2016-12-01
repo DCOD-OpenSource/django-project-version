@@ -9,9 +9,11 @@ from django import template
 
 from djversion.utils import get_version
 
+
 __all__ = [
     "project_version",
 ]
+
 
 register = template.Library()
 
@@ -20,6 +22,8 @@ register = template.Library()
 def project_version():
     """
     Formatted version string templatetag.
+    Returns:
+        string: string with project version or empty string.
     """
 
     return get_version()

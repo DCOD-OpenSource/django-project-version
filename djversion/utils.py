@@ -9,14 +9,23 @@ from datetime import date, datetime
 
 from django.templatetags.l10n import localize
 
-from djversion.settings import VERSION, UPDATED, FORMAT_STRING
+from djversion.settings import (
+    VERSION,
+    UPDATED,
+    FORMAT_STRING,
+)
 
-__all__ = ["get_version", ]
+
+__all__ = [
+    "get_version",
+]
 
 
 def get_version():
     """
     Return formatted version string.
+    Returns:
+        string: string with project version or empty string.
     """
 
     if all([VERSION, UPDATED, any([isinstance(UPDATED, date), isinstance(UPDATED, datetime), ]), ]):
