@@ -11,14 +11,15 @@ from setuptools import (
 
 
 # metadata
-VERSION = (0, 2, 0)
+VERSION = (0, 2, 1)
 __version__ = ".".join(map(str, VERSION))
-
 setup(
     name="django-project-version",
     version=__version__,
     packages=find_packages(),
-    install_requires=["Django", ],
+    install_requires=[
+        "Django",
+    ],
     author="Alexei Andrushievich",
     author_email="vint21h@vint21h.pp.ua",
     description="Django reusable app to show your project version",
@@ -39,5 +40,7 @@ setup(
         "Framework :: Django :: 1.6",
         "Framework :: Django :: 1.7",
         "Framework :: Django :: 1.8",
+        "Framework :: Django :: 1.9",
+        "Framework :: Django :: 1.10",
     ]
 )
