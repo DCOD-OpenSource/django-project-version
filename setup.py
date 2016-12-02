@@ -11,7 +11,7 @@ from setuptools import (
 
 
 # metadata
-VERSION = (0, 2, 1)
+VERSION = (0, 2, 2)
 __version__ = ".".join(map(str, VERSION))
 setup(
     name="django-project-version",
