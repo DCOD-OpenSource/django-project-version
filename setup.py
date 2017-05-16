@@ -11,7 +11,7 @@ from setuptools import (
 
 
 # metadata
-VERSION = (0, 2, 2)
+VERSION = (0, 2, 3)
 __version__ = ".".join(map(str, VERSION))
 setup(
     name="django-project-version",
@@ -42,5 +42,6 @@ setup(
         "Framework :: Django :: 1.8",
         "Framework :: Django :: 1.9",
         "Framework :: Django :: 1.10",
+        "Framework :: Django :: 1.11",
     ]
 )
