@@ -3,6 +3,7 @@
 # django-project-version
 # djversion/utils.py
 
+
 from __future__ import unicode_literals
 
 from datetime import date, datetime
@@ -24,8 +25,9 @@ __all__ = [
 def get_version():
     """
     Return formatted version string.
+
     Returns:
-        string: string with project version or empty string.
+        str: string with project version or empty string.
     """
 
     if all([VERSION, UPDATED, any([isinstance(UPDATED, date), isinstance(UPDATED, datetime), ]), ]):

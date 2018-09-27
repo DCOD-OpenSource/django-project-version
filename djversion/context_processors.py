@@ -3,6 +3,7 @@
 # django-project-version
 # djversion/context_processors.py
 
+
 from __future__ import unicode_literals
 
 from djversion.utils import get_version
@@ -16,6 +17,7 @@ __all__ = [
 def version(request):
     """
     Return formatted version string named as "VERSION" to context.
+
     Args:
         request: (django.http.request.HttpRequest) django request instance.
     Returns:
