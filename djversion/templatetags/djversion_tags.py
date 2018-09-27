@@ -3,6 +3,7 @@
 # django-project-version
 # djversion/templatetags/djversion_tags.py
 
+
 from __future__ import unicode_literals
 
 from django import template
@@ -18,12 +19,13 @@ __all__ = [
 register = template.Library()
 
 
-@register.assignment_tag()
+@register.simple_tag()
 def project_version():
     """
     Formatted version string templatetag.
+
     Returns:
-        string: string with project version or empty string.
+        str: string with project version or empty string.
     """
 
     return get_version()

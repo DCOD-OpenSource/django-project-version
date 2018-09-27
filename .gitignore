@@ -1,6 +1,7 @@
 # django-project-version
 # .gitignore
 
+
 .*.swp
 *.pyc
 *.log

@@ -1,6 +1,7 @@
 # django-project-version
 # Makefile
 
+
 docs:
 	rst2html README.rst > index.html && zip docs.zip index.html
 
