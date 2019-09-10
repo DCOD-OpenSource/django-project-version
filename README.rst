@@ -5,6 +5,8 @@
 A django-project-version documentation
 ======================================
 
+    |Travis|_ |Coverage|_ |Codacy|_ |Requires|_ |pypi-license|_ |pypi-version|_ |pypi-python-version|_ |pypi-django-version|_ |pypi-format|_ |pypi-wheel|_ |pypi-status|_
+
     *django-project-version is a django reusable app to show your project version*
 
 .. contents::
@@ -16,17 +18,19 @@ Installation
 
 Configuration
 -------------
-Add ``"djversion"`` to ``settings.INSTALLED_APPS``.
+* Add ``"djversion"`` to ``settings.INSTALLED_APPS``.
 
 .. code-block:: python
+
+    # settings.py
 
     INSTALLED_APPS += (
         "djversion",
     )
 
 
-Settings
---------
+django-project-version settings
+-------------------------------
 ``DJVERSION_VERSION``
     Contains project version. Defaults to ``None``.
 
@@ -38,9 +42,11 @@ Settings
 
 Usage
 -----
-If you want always have ``VERSION`` variable in templates context, just add ``"djversion.context_processors.version"`` to ``settings.TEMPLATE_CONTEXT_PROCESSORS``
+If you want always have ``"VERSION"`` variable in templates context, just add ``"djversion.context_processors.version"`` to ``settings.TEMPLATE_CONTEXT_PROCESSORS``
 
 .. code-block:: python
+
+    # settings.py
 
     TEMPLATE_CONTEXT_PROCESSORS += (
         "djversion.context_processors.version",
@@ -49,9 +55,9 @@ If you want always have ``VERSION`` variable in templates context, just add ``"d
 
 Or you can use ``project_version`` assignment templatetag which can be loaded from ``djversion_tags``.
 
-For example:
-
 .. code-block:: django
+
+    {# footer.html #}
 
     {% load djversion_tags %}
 
@@ -70,3 +76,27 @@ Contacts
 **Author**: Alexei Andrushievich <vint21h@vint21h.pp.ua>
 
 For other authors list see AUTHORS file.
+
+
+.. |Travis| image:: https://travis-ci.org/DCOD-OpenSource/django-project-version.svg?branch=master
+.. |Coverage| image:: https://api.codacy.com/project/badge/Coverage/20867c616b944421bc6793dcaf9d58ff
+.. |Codacy| image:: https://api.codacy.com/project/badge/Grade/20867c616b944421bc6793dcaf9d58ff
+.. |Requires| image:: https://requires.io/github/DCOD-OpenSource/django-project-version/requirements.svg?branch=master
+.. |pypi-license| image:: https://img.shields.io/pypi/l/django-project-version
+.. |pypi-version| image:: https://img.shields.io/pypi/v/django-project-version
+.. |pypi-django-version| image:: https://img.shields.io/pypi/djversions/django-project-version
+.. |pypi-python-version| image:: https://img.shields.io/pypi/pyversions/django-project-version
+.. |pypi-format| image:: https://img.shields.io/pypi/format/django-project-version
+.. |pypi-wheel| image:: https://img.shields.io/pypi/wheel/django-project-version
+.. |pypi-status| image:: https://img.shields.io/pypi/status/django-project-version
+.. _Travis: https://travis-ci.org/DCOD-OpenSource/django-project-version/
+.. _Coverage: https://www.codacy.com/app/DCOD-OpenSource/django-project-version
+.. _Codacy: https://www.codacy.com/app/DCOD-OpenSource/django-project-version
+.. _Requires: https://requires.io/github/DCOD-OpenSource/django-project-version/requirements/?branch=master
+.. _pypi-license: https://pypi.org/project/django-project-version/
+.. _pypi-version: https://pypi.org/project/django-project-version/
+.. _pypi-django-version: https://pypi.org/project/django-project-version/
+.. _pypi-python-version: https://pypi.org/project/django-project-version/
+.. _pypi-format: https://pypi.org/project/django-project-version/
+.. _pypi-wheel: https://pypi.org/project/django-project-version/
+.. _pypi-status: https://pypi.org/project/django-project-version/
