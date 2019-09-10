@@ -4,7 +4,6 @@
 # tests/settings.py
 
 
-import datetime
 import pathlib
 import sys
 from typing import Dict, List, Union  # pylint: disable=W0611

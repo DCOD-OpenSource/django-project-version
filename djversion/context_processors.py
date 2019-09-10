@@ -4,22 +4,24 @@
 # djversion/context_processors.py
 
 
-from __future__ import unicode_literals
+from typing import Dict, List  # pylint: disable=W0611
+
+from django.http import HttpRequest
 
 from djversion.utils import get_version
 
 
-__all__ = ["version"]
+__all__ = ["version"]  # type: List[str]
 
 
-def version(request):
+def version(request: HttpRequest) -> Dict[str, str]:
     """
     Return formatted version string named as "VERSION" to context.
 
-    Args:
-        request: (django.http.request.HttpRequest) django request instance.
-    Returns:
-        dict: dict with "VERSION" key with value of project version.
+    :param request: django HTTP request object.
+    :type request: django.http.request.HttpRequest.
+    :return: formatted version string named as "VERSION".
+    :rtype: Dict[str, str].
     """
 
     return {"VERSION": get_version()}

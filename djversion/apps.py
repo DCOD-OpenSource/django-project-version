@@ -4,15 +4,19 @@
 # djversion/apps.py
 
 
-from __future__ import unicode_literals
+from typing import List  # pylint: disable=W0611
 
 from django.apps import AppConfig
+from django.utils.translation import ugettext_lazy as _
 
 
-__all__ = ["Config"]
+__all__ = ["DjangoDjversionConfig"]  # type: List[str]
 
 
-class Config(AppConfig):
+class DjangoDjversionConfig(AppConfig):
+    """
+    Application config.
+    """
 
-    name = "djversion"
-    verbose_name = "Django project version"
+    name = "djversion"  # type: str
+    verbose_name = _("Django project version")  # type: str

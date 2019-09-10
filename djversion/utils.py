@@ -4,24 +4,23 @@
 # djversion/utils.py
 
 
-from __future__ import unicode_literals
-
 from datetime import date, datetime
+from typing import List  # pylint: disable=W0611
 
 from django.templatetags.l10n import localize
 
 from djversion.settings import UPDATED, VERSION, FORMAT_STRING
 
 
-__all__ = ["get_version"]
+__all__ = ["get_version"]  # type: List[str]
 
 
-def get_version():
+def get_version() -> str:
     """
-    Return formatted version string.
+    Format version string.
 
-    Returns:
-        str: string with project version or empty string.
+    :return: formatted version string.
+    :rtype: str.
     """
 
     if all(

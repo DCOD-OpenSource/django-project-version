@@ -4,26 +4,26 @@
 # djversion/templatetags/djversion_tags.py
 
 
-from __future__ import unicode_literals
+from typing import List  # pylint: disable=W0611
 
 from django import template
 
 from djversion.utils import get_version
 
 
-__all__ = ["project_version"]
+__all__ = ["project_version"]  # type: List[str]
 
 
 register = template.Library()
 
 
 @register.simple_tag()
-def project_version():
+def project_version() -> str:
     """
     Formatted version string templatetag.
 
-    Returns:
-        str: string with project version or empty string.
+    :return: formatted project verion.
+    :rtype: str.
     """
 
     return get_version()
