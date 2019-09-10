@@ -22,7 +22,7 @@ def project_version() -> str:
     """
     Formatted version string templatetag.
 
-    :return: formatted project verion.
+    :return: formatted project version.
     :rtype: str.
     """
 
