@@ -11,9 +11,7 @@ from django import template
 from djversion.utils import get_version
 
 
-__all__ = [
-    "project_version",
-]
+__all__ = ["project_version"]
 
 
 register = template.Library()

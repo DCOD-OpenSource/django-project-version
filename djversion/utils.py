@@ -10,16 +10,10 @@ from datetime import date, datetime
 
 from django.templatetags.l10n import localize
 
-from djversion.settings import (
-    VERSION,
-    UPDATED,
-    FORMAT_STRING,
-)
+from djversion.settings import UPDATED, VERSION, FORMAT_STRING
 
 
-__all__ = [
-    "get_version",
-]
+__all__ = ["get_version"]
 
 
 def get_version():
@@ -30,15 +24,25 @@ def get_version():
         str: string with project version or empty string.
     """
 
-    if all([VERSION, UPDATED, any([isinstance(UPDATED, date), isinstance(UPDATED, datetime), ]), ]):
+    if all(
+        [
+            VERSION,
+            UPDATED,
+            any([isinstance(UPDATED, date), isinstance(UPDATED, datetime)]),
+        ]
+    ):
 
-        return FORMAT_STRING.format(**{"version": VERSION, "updated": UPDATED, })
+        return FORMAT_STRING.format(**{"version": VERSION, "updated": UPDATED})
     elif VERSION:
 
         return VERSION
     elif UPDATED:
 
-        return localize(UPDATED) if any([isinstance(UPDATED, date), isinstance(UPDATED, datetime), ]) else ""
+        return (
+            localize(UPDATED)
+            if any([isinstance(UPDATED, date), isinstance(UPDATED, datetime)])
+            else ""
+        )
     else:
 
         return ""

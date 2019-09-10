@@ -9,11 +9,7 @@ from __future__ import unicode_literals
 from django.conf import settings
 
 
-__all__ = [
-    "VERSION",
-    "UPDATED",
-    "FORMAT_STRING",
-]
+__all__ = ["VERSION", "UPDATED", "FORMAT_STRING"]
 
 
 VERSION = getattr(settings, "DJVERSION_VERSION", None)

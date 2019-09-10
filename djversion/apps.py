@@ -9,9 +9,7 @@ from __future__ import unicode_literals
 from django.apps import AppConfig
 
 
-__all__ = [
-    "Config",
-]
+__all__ = ["Config"]
 
 
 class Config(AppConfig):

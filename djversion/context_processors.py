@@ -9,9 +9,7 @@ from __future__ import unicode_literals
 from djversion.utils import get_version
 
 
-__all__ = [
-    "version",
-]
+__all__ = ["version"]
 
 
 def version(request):
@@ -24,6 +22,4 @@ def version(request):
         dict: dict with "VERSION" key with value of project version.
     """
 
-    return {
-        "VERSION": get_version(),
-    }
+    return {"VERSION": get_version()}

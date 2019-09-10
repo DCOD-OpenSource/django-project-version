@@ -2,6 +2,8 @@
 # MANIFEST.in
 
 
+prune tests*
 include README.rst
 include MIT-LICENSE
 include AUTHORS
+recursive-include djversion *.po

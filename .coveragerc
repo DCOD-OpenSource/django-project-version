@@ -1,0 +1,19 @@
+# django-project-version
+# .coveragerc
+
+
+[run]
+branch = True
+source = djversion
+omit =
+    */__init__.py
+   djversion/apps.py
+
+[report]
+omit =
+    */__init__.py
+    djversion/apps.py
+exclude_lines =
+    pragma: no cover
+
+[xml]
