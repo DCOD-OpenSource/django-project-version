@@ -33,13 +33,14 @@ def get_version() -> str:
                     isinstance(settings.DJVERSION_UPDATED, datetime),
                 ]
             ),
+            settings.DJVERSION_FORMAT_STRING,
         ]
     ):
 
         return settings.DJVERSION_FORMAT_STRING.format(
             **{
                 "version": settings.DJVERSION_VERSION,
-                "updated": settings.DJVERSION_UPDATED,
+                "updated": localize(settings.DJVERSION_UPDATED),
             }
         )
     elif settings.DJVERSION_VERSION:

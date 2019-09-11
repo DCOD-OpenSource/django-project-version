@@ -4,6 +4,7 @@
 # tests/settings.py
 
 
+from datetime import date
 import pathlib
 import sys
 from typing import Dict, List, Union  # pylint: disable=W0611
@@ -57,3 +58,6 @@ NOSE_ARGS = [
 ROOT_URLCONF = "djversion.urls"  # type: str
 
 # djversion settings
+DJVERSION_VERSION = "1.0.1"  # type: str
+DJVERSION_UPDATED = date(1991, 8, 24)  # type: date
+DJVERSION_FORMAT_STRING = "{version} ({updated})"  # type: str
