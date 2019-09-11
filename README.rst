@@ -53,7 +53,7 @@ If you want always have ``"VERSION"`` variable in templates context, just add ``
     )
 
 
-Or you can use ``project_version`` assignment templatetag which can be loaded from ``djversion_tags``.
+Or you can use ``project_version`` templatetag which can be loaded from ``djversion_tags``.
 
 .. code-block:: django
 
