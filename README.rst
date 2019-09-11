@@ -79,8 +79,8 @@ For other authors list see AUTHORS file.
 
 
 .. |Travis| image:: https://travis-ci.org/DCOD-OpenSource/django-project-version.svg?branch=master
-.. |Coverage| image:: https://api.codacy.com/project/badge/Coverage/super-secret-code
-.. |Codacy| image:: https://api.codacy.com/project/badge/Grade/super-secret-code
+.. |Coverage| image:: https://api.codacy.com/project/badge/Coverage/supersecretcode
+.. |Codacy| image:: https://api.codacy.com/project/badge/Grade/supersecretcode
 .. |Requires| image:: https://requires.io/github/DCOD-OpenSource/django-project-version/requirements.svg?branch=master
 .. |pypi-license| image:: https://img.shields.io/pypi/l/django-project-version
 .. |pypi-version| image:: https://img.shields.io/pypi/v/django-project-version
