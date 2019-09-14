@@ -26,6 +26,11 @@ class DjangoDjversionAppConf(AppConf):
     FORMAT_STRING = getattr(
         settings, "DJVERSION_FORMAT_STRING", "{version} ({updated})"
     )  # type: str
+    GIT_REPO_PATH = getattr(
+        settings, "DJVERSION_GIT_REPO_PATH", None
+    )  # type: Optional[str]
+    GIT_USE_TAG = getattr(settings, "DJVERSION_GIT_USE_TAG", False)  # type: bool
+    GIT_USE_COMMIT = getattr(settings, "DJVERSION_GIT_USE_COMMIT", False)  # type: bool
 
     class Meta:
 
