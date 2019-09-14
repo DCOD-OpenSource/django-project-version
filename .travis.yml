@@ -11,6 +11,8 @@ before_install:
   - |
       pip install pipenv
       pip install -e .[test]
+      pip install -e .[rest]
+      pip install -e .[git]
 
 script:
   - make tox
@@ -21,5 +23,4 @@ branches:
 
 after_success:
   - |
-      coverage xml
-      python-codacy-coverage -r coverage.xml
+      make coverage
