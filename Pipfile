@@ -34,3 +34,4 @@ pygments = "==2.4.2"
 [packages]
 django = ">=2.1"
 django-appconf = ">=1.0.3"
+djangorestframework = ">=3.10.3"

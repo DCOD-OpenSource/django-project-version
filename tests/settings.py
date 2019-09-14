@@ -36,7 +36,12 @@ TEMPLATES = [
 
 
 # add testing related apps
-INSTALLED_APPS = ["django_nose", "djversion"]  # type: List[str]
+INSTALLED_APPS = [
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django_nose",
+    "djversion",
+]  # type: List[str]
 
 # add nose test runner
 TEST_RUNNER = "django_nose.NoseTestSuiteRunner"  # type: str
@@ -56,6 +61,10 @@ NOSE_ARGS = [
 
 # configure urls
 ROOT_URLCONF = "djversion.urls"  # type: str
+
+# drf settings
+REST_FRAMEWORK = {"DEFAULT_RENDERER_CLASSES": ["rest_framework.renderers.JSONRenderer"]}
+
 
 # djversion settings
 DJVERSION_VERSION = "1.0.1"  # type: str

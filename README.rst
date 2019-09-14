@@ -65,6 +65,31 @@ Or you can use ``project_version`` templatetag which can be loaded from ``djvers
     {{ VERSION }}
 
 
+Advanced features
+-----------------
+If you want to have REST style view with your project version:
+
+* Install ``django-project-version`` with additional dependencies: ``pip install django-project-version[rest]``.
+* Extend you ``settings.INSTALLED_APPS`` by adding ``"rest_framework"``.
+
+.. code-block:: python
+
+    # settings.py
+
+    INSTALLED_APPS += (
+        "rest_framework",
+    )
+
+* Add ``"djversion"`` to your URLs definitions:
+
+.. code-block:: python
+
+    # urls.py
+
+    urlpatterns += [
+        url(r"^version/", include("djversion.urls")),
+    ]
+
 Licensing
 ---------
 django-project-version uses the MIT license. Please check the MIT-LICENSE file for more details.
