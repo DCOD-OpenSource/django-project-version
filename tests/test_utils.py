@@ -4,12 +4,16 @@
 # tests/test_utils.py
 
 
+import pathlib
+import shutil
 from typing import List  # pylint: disable=W0611
 
 from django.test import TestCase
 from django.test.utils import override_settings
 from django.utils import translation
+import git
 
+from djversion.conf import settings
 from djversion.utils import get_version
 
 
@@ -78,3 +82,54 @@ class GetVersionUtilTest(TestCase):
 
         with translation.override("en"):
             self.assertEqual(first=get_version(), second="")
+
+    @override_settings(
+        DJVERSION_VERSION=None,
+        DJVERSION_UPDATED=None,
+        DJVERSION_GIT_REPO_PATH="./tmp",
+        DJVERSION_GIT_USE_TAG=True,
+    )
+    def test_get_version__with_git_tag(self) -> None:
+        """
+        Util must return current tag from git repo from path.
+
+        :return: nothing.
+        :rtype: None.
+        """
+
+        path = pathlib.Path(settings.DJVERSION_GIT_REPO_PATH)
+        test = path.joinpath("TEST")
+        repo = git.Repo.init(str(path.absolute()))
+        test.absolute().open("wb").close()
+        repo.index.add([str(test.absolute())])
+        repo.index.commit("TEST")
+        repo.create_tag("0.0.1", message="v0.0.1")
+        version = get_version()
+        shutil.rmtree(path)
+
+        self.assertEqual(first=version, second="0.0.1")
+
+    @override_settings(
+        DJVERSION_VERSION=None,
+        DJVERSION_UPDATED=None,
+        DJVERSION_GIT_REPO_PATH="./tmp",
+        DJVERSION_GIT_USE_COMMIT=True,
+    )
+    def test_get_version__with_git_commit(self) -> None:
+        """
+        Util must return last commit from git repo from path.
+
+        :return: nothing.
+        :rtype: None.
+        """
+
+        path = pathlib.Path(settings.DJVERSION_GIT_REPO_PATH)
+        test = path.joinpath("TEST")
+        repo = git.Repo.init(str(path.absolute()))
+        test.absolute().open("wb").close()
+        repo.index.add([str(test.absolute())])
+        commit = repo.index.commit("TEST")
+        version = get_version()
+        shutil.rmtree(path)
+
+        self.assertEqual(first=version, second=commit.hexsha)
