@@ -14,7 +14,7 @@ A django-project-version documentation
 Installation
 ------------
 * Obtain your copy of source code from the git repository: ``git clone https://github.com/DCOD-OpenSource/django-project-version.git``. Or download the latest release from https://github.com/DCOD-OpenSource/django-project-version/tags/.
-* Run ``python ./setup.py install`` from repository source tree or unpacked archive. Or use pip: ``pip install django-project-version``.
+* Run ``python ./setup.py install`` from the repository source tree or unpacked archive. Or use pip: ``pip install django-project-version``.
 
 Configuration
 -------------
@@ -39,6 +39,15 @@ django-project-version settings
 
 ``DJVERSION_FORMAT_STRING``
     Contains version and updated format string. Defaults to ``"{version} ({updated})"``.
+
+``DJVERSION_GIT_REPO_PATH``
+    Contains path to git repository from where version info can get. Defaults to ``None``.
+
+``DJVERSION_GIT_USE_TAG``
+    Indicate usage of git repository current tag as project version. Defaults to ``False``.
+
+``DJVERSION_GIT_USE_COMMIT``
+    Indicate usage of git repository last commit hash as project version. Defaults to ``False``.
 
 Usage
 -----
@@ -67,7 +76,7 @@ Or you can use ``project_version`` templatetag which can be loaded from ``djvers
 
 Advanced features
 -----------------
-If you want to have REST style view with your project version:
+If you want to have REST-style view with your project version:
 
 * Install ``django-project-version`` with additional dependencies: ``pip install django-project-version[rest]``.
 * Extend you ``settings.INSTALLED_APPS`` by adding ``"rest_framework"``.
@@ -89,6 +98,12 @@ If you want to have REST style view with your project version:
     urlpatterns += [
         url(r"^version/", include("djversion.urls")),
     ]
+
+Or to use information from the project git repository as project version:
+
+* Install ``django-project-version`` with additional dependencies: ``pip install django-project-version[git]``.
+* Configure git related settings.
+
 
 Licensing
 ---------
