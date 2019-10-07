@@ -97,7 +97,7 @@ class GetVersionUtilTest(TestCase):
         :rtype: None.
         """
 
-        path = pathlib.Path(settings.DJVERSION_GIT_REPO_PATH)
+        path = pathlib.Path(settings.DJVERSION_GIT_REPO_PATH)  # type: ignore
         test = path.joinpath("TEST")
         repo = git.Repo.init(str(path.absolute()))
         test.absolute().open("wb").close()
@@ -123,7 +123,7 @@ class GetVersionUtilTest(TestCase):
         :rtype: None.
         """
 
-        path = pathlib.Path(settings.DJVERSION_GIT_REPO_PATH)
+        path = pathlib.Path(settings.DJVERSION_GIT_REPO_PATH)  # type: ignore
         test = path.joinpath("TEST")
         repo = git.Repo.init(str(path.absolute()))
         test.absolute().open("wb").close()

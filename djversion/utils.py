@@ -65,19 +65,19 @@ def get_version() -> str:
             )
             else ""
         )
-    elif all([Repo, settings.DJVERSION_GIT_REPO_PATH]):
+    elif all([Repo, settings.DJVERSION_GIT_REPO_PATH]):  # type: ignore
         try:
 
-            repo = Repo(settings.DJVERSION_GIT_REPO_PATH)
+            repo = Repo(settings.DJVERSION_GIT_REPO_PATH)  # type: ignore
 
-            if settings.DJVERSION_GIT_USE_TAG:
+            if settings.DJVERSION_GIT_USE_TAG:  # type: ignore
 
                 tag = next(
                     (tag for tag in repo.tags if tag.commit == repo.head.commit), None
                 )
 
                 return tag.name if tag else ""
-            elif settings.DJVERSION_GIT_USE_COMMIT:
+            elif settings.DJVERSION_GIT_USE_COMMIT:  # type: ignore
 
                 return repo.head.commit.hexsha if repo.head.commit else ""
             else:
