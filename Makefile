@@ -3,7 +3,7 @@
 
 
 .ONESHELL:
-PHONY: tox test makemessages compilemessages bumpversion build check twine-check twine-upload clean coverage help
+PHONY: tox test makemessages compilemessages bumpversion build check twine-check twine-upload twine-check-upload clean coverage help
 TEST_PYPI_URL=https://test.pypi.org/legacy/
 NAME=djversion
 EXTENSIONS=py,html,txt
@@ -28,20 +28,22 @@ compilemessages:
 	django-admin compilemessages;\
 
 bumpversion:
-	git tag -a $(VERSION) -m 'v$(VERSION)'
+	git tag -a $(VERSION) -m 'v$(VERSION)';\
 
 build:
 	python setup.py $(BUILD_TYPES);\
 
 check:
-	pre-commit run --all-files
+	pre-commit run --all-files;\
 
 twine-check:
 	twine check dist/*;\
-	twine upload -s --repository-url $(TEST_PYPI_URL) dist/*;\
+
+twine-check-upload:
+	twine upload --skip-existing -s --repository-url $(TEST_PYPI_URL) dist/*;\
 
 twine-upload:
-	twine upload -s dist/*;\
+	twine upload --skip-existing -s dist/*;\
 
 clean:
 	for file in $(TRASH_FILES); do\
@@ -73,7 +75,9 @@ help:
 	@echo "    check:"
 	@echo "        Perform some code checks."
 	@echo "    twine-check:"
-	@echo "        Run some twine checks."
+	@echo "        Run twine checks."
+	@echo "    twine-check-upload:"
+	@echo "        Uload package to test PyPi using twine."
 	@echo "    twine-upload:"
 	@echo "        Uload package to PyPi using twine."
 	@echo "    clean:"

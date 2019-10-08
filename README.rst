@@ -130,8 +130,8 @@ For other authors list see AUTHORS file.
 .. |pypi-wheel| image:: https://img.shields.io/pypi/wheel/django-project-version
 .. |pypi-status| image:: https://img.shields.io/pypi/status/django-project-version
 .. _Travis: https://travis-ci.org/DCOD-OpenSource/django-project-version/
-.. _Coverage: https://www.codacy.com/app/DCOD-OpenSource/django-project-version
-.. _Codacy: https://www.codacy.com/app/DCOD-OpenSource/django-project-version
+.. _Coverage: https://app.codacy.com/manual/DCOD/django-project-version/dashboard
+.. _Codacy: https://app.codacy.com/manual/DCOD/django-project-version/dashboard
 .. _Requires: https://requires.io/github/DCOD-OpenSource/django-project-version/requirements/?branch=master
 .. _pypi-license: https://pypi.org/project/django-project-version/
 .. _pypi-version: https://pypi.org/project/django-project-version/
