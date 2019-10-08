@@ -128,8 +128,8 @@ class GetVersionUtilTest(TestCase):
         path = pathlib.Path(settings.DJVERSION_GIT_REPO_PATH)  # type: ignore
         test = path.joinpath("TEST")  # type: pathlib.Path
         repo = git.Repo.init(str(path.absolute()))  # type: git.Repo
-        author = git.Actor(name="DCOD", email="contact@d-cod.com")  # type: git.Actor
-        committer = git.Actor(name="DCOD", email="contact@d-cod.com")  # type: git.Actor
+        author = git.Actor(name="TEST", email="test@example.com")  # type: git.Actor
+        committer = git.Actor(name="TEST", email="test@example.com")  # type: git.Actor
         test.absolute().open("wb").close()
         repo.index.add([str(test.absolute())])
         commit = repo.index.commit(message="TEST", author=author, committer=committer)
