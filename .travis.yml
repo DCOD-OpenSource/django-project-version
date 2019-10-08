@@ -13,9 +13,6 @@ before_install:
       pip install -e .[rest]
       pip install -e .[git]
 script:
-  - |
-      make tox
-      make build
-      make twine-check
+  -  make tox
 after_success:
   - make coverage
