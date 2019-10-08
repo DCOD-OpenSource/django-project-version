@@ -146,7 +146,7 @@ class GetVersionUtilTest(TestCase):
             repo.index.add([str(test.absolute())])
             commit = repo.index.commit(
                 message="TEST", author=author, committer=committer
-            )
+            )  # type: git.Commit
             config.write()
             config.release()
         version = get_version()  # type: str
