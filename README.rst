@@ -113,7 +113,7 @@ Contacts
 --------
 **Project Website**: https://github.com/DCOD-OpenSource/django-project-version/
 
-**Author**: Alexei Andrushievich <vint21h@vint21h.pp.ua>
+**Author**: DCOD <contact@d-cod.com>
 
 For other authors list see AUTHORS file.
 
