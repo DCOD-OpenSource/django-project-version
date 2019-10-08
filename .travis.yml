@@ -6,20 +6,13 @@ language: python
 python:
   - "3.6"
   - "3.7"
-
 before_install:
   - |
       pip install pipenv
       pip install -e .[test]
       pip install -e .[rest]
       pip install -e .[git]
-
 script:
   - make tox
-
-branches:
-  only:
-  - master
-
 after_success:
   - make coverage
