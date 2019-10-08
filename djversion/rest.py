@@ -49,6 +49,6 @@ class VersionView(GenericAPIView):
         """
 
         data = {"version": get_version()}  # type: Dict[str, str]
-        serializer = self.get_serializer(instance=data)  # type: VersionSerializer
+        serializer = self.get_serializer(instance=data)
 
         return Response(serializer.data)

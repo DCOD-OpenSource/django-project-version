@@ -35,4 +35,6 @@ class VersionViewTest(TestCase):
         view = VersionView().as_view()
         result = view(request=request)  # type: Response
 
-        self.assertDictEqual(d1=result.data, d2={"version": "1.0.1 (Aug. 24, 1991)"})
+        self.assertDictEqual(
+            d1=result.data, d2={"version": "1.0.1 (Aug. 24, 1991)"}  # type: ignore
+        )
