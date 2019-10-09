@@ -3,7 +3,7 @@
 
 
 .ONESHELL:
-PHONY: tox test makemessages compilemessages bumpversion build check twine-check twine-upload twine-check-upload clean coverage help
+PHONY: tox test makemessages compilemessages bumpversion build check sign twine-check twine-check-upload twine-upload clean coverage help
 TEST_PYPI_URL=https://test.pypi.org/legacy/
 NAME=djversion
 EXTENSIONS=py,html,txt
@@ -19,8 +19,7 @@ test:
 	bash -c 'PYTHONPATH="$$PYTHONPATH:$$PWD" django-admin test $(TESTS) --settings=tests.settings';\
 
 makemessages:
-	cd $(NAME);\
-	for locale in `ls locale`; do\
+	for locale in `ls $(NAME)/locale`; do\
 		django-admin makemessages --locale=$$locale --extension=$(EXTENSIONS);\
 	done;\
 
@@ -32,6 +31,11 @@ bumpversion:
 
 build:
 	python setup.py $(BUILD_TYPES);\
+
+sign:
+	for package in `ls dist`; do\
+		gpg -a --detach-sign dist/$$package;\
+	done;\
 
 check:
 	pre-commit run --all-files;\
@@ -72,6 +76,8 @@ help:
 	@echo "        Tag current code revision with version."
 	@echo "    build:"
 	@echo "        Build python packages, can specify packages types with 'BUILD_TYPES' variable."
+	@echo "    sign:"
+	@echo "        Sign python packages."
 	@echo "    check:"
 	@echo "        Perform some code checks."
 	@echo "    twine-check:"
