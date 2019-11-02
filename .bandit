@@ -1,0 +1,6 @@
+# django-project-version
+# .bandit
+
+
+[bandit]
+skips: ['B507']

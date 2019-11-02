@@ -6,6 +6,7 @@
 
 from datetime import date
 import pathlib
+import random
 import sys
 from typing import Dict, List, Union  # pylint: disable=W0611
 
@@ -14,7 +15,12 @@ from typing import Dict, List, Union  # pylint: disable=W0611
 sys.path.insert(0, str(pathlib.Path(__file__).absolute().parent.parent.parent))
 
 # secret key
-SECRET_KEY = "django-project-version-test-key"  # type: str
+SECRET_KEY = "".join(
+    [
+        random.choice("abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)")  # nosec
+        for i in range(50)
+    ]
+)  # type: str
 
 # configure databases
 DATABASES = {
