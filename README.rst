@@ -5,7 +5,7 @@
 A django-project-version documentation
 ======================================
 
-|Travis|_ |Coverage|_ |Requires|_ |pypi-license|_ |pypi-version|_ |pypi-python-version|_ |pypi-django-version|_ |pypi-format|_ |pypi-wheel|_ |pypi-status|_
+|Travis|_ |Coveralls|_ |Requires|_ |pypi-license|_ |pypi-version|_ |pypi-python-version|_ |pypi-django-version|_ |pypi-format|_ |pypi-wheel|_ |pypi-status|_
 
     *django-project-version is a Django reusable app to show your project version*
 
@@ -120,8 +120,8 @@ For other authors list see AUTHORS file.
 
 .. |Travis| image:: https://travis-ci.org/DCOD-OpenSource/django-project-version.svg?branch=master
     :alt: Travis
-.. |Coverage| image:: https://api.codacy.com/project/badge/Coverage/458f771e39974f5981196d960627db92
-    :alt: Coverage
+.. |Coveralls| image:: https://coveralls.io/repos/github/DCOD-OpenSource/django-project-version/badge.svg?branch=master
+    :alt: Coveralls
 .. |Requires| image:: https://requires.io/github/DCOD-OpenSource/django-project-version/requirements.svg?branch=master
     :alt: Requires
 .. |pypi-license| image:: https://img.shields.io/pypi/l/django-project-version
@@ -139,7 +139,7 @@ For other authors list see AUTHORS file.
 .. |pypi-status| image:: https://img.shields.io/pypi/status/django-project-version
     :alt: Package status
 .. _Travis: https://travis-ci.org/DCOD-OpenSource/django-project-version/
-.. _Coverage: https://app.codacy.com/manual/DCOD/django-project-version/dashboard
+.. _Coveralls: https://coveralls.io/github/DCOD-OpenSource/django-project-version?branch=master
 .. _Requires: https://requires.io/github/DCOD-OpenSource/django-project-version/requirements/?branch=master
 .. _pypi-license: https://pypi.org/project/django-project-version/
 .. _pypi-version: https://pypi.org/project/django-project-version/
