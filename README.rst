@@ -24,13 +24,13 @@ Configuration
 
     # settings.py
 
-    INSTALLED_APPS += (
+    INSTALLED_APPS += [
         "djversion",
-    )
+    ]
 
 
-django-project-version settings
--------------------------------
+Settings
+--------
 ``DJVERSION_VERSION``
     Contains project version. Defaults to ``None``.
 
@@ -57,9 +57,9 @@ If you want always have ``"VERSION"`` variable in templates context, just add ``
 
     # settings.py
 
-    TEMPLATE_CONTEXT_PROCESSORS += (
+    TEMPLATE_CONTEXT_PROCESSORS += [
         "djversion.context_processors.version",
-    )
+    ]
 
 
 Or you can use ``project_version`` templatetag which can be loaded from ``djversion_tags``.
@@ -85,9 +85,9 @@ If you want to have REST-style view with your project version:
 
     # settings.py
 
-    INSTALLED_APPS += (
+    INSTALLED_APPS += [
         "rest_framework",
-    )
+    ]
 
 * Add ``"djversion"`` to your URLs definitions:
 
@@ -119,16 +119,27 @@ For other authors list see AUTHORS file.
 
 
 .. |Travis| image:: https://travis-ci.org/DCOD-OpenSource/django-project-version.svg?branch=master
+    :alt: Travis
 .. |Coverage| image:: https://api.codacy.com/project/badge/Coverage/458f771e39974f5981196d960627db92
+    :alt: Coverage
 .. |Codacy| image:: https://api.codacy.com/project/badge/Grade/458f771e39974f5981196d960627db92
+    :alt: Codacy
 .. |Requires| image:: https://requires.io/github/DCOD-OpenSource/django-project-version/requirements.svg?branch=master
+    :alt: Requires
 .. |pypi-license| image:: https://img.shields.io/pypi/l/django-project-version
+    :alt: License
 .. |pypi-version| image:: https://img.shields.io/pypi/v/django-project-version
+    :alt: Version
 .. |pypi-django-version| image:: https://img.shields.io/pypi/djversions/django-project-version
+    :alt: Supported Django version
 .. |pypi-python-version| image:: https://img.shields.io/pypi/pyversions/django-project-version
+    :alt: Supported Python version
 .. |pypi-format| image:: https://img.shields.io/pypi/format/django-project-version
+    :alt: Package format
 .. |pypi-wheel| image:: https://img.shields.io/pypi/wheel/django-project-version
+    :alt: Python wheel support
 .. |pypi-status| image:: https://img.shields.io/pypi/status/django-project-version
+    :alt: Package status
 .. _Travis: https://travis-ci.org/DCOD-OpenSource/django-project-version/
 .. _Coverage: https://app.codacy.com/manual/DCOD/django-project-version/dashboard
 .. _Codacy: https://app.codacy.com/manual/DCOD/django-project-version/dashboard
