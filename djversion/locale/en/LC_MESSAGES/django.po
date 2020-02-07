@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-project-version 0.8.1\n"
 "Report-Msgid-Bugs-To: Alexei Andrushievich <vint21h@vint21h.pp.ua>\n"
-"POT-Creation-Date: 2020-02-06 02:51+0200\n"
+"POT-Creation-Date: 2020-02-07 16:19+0200\n"
 "PO-Revision-Date: 2019-09-11 04:53+0300\n"
 "Last-Translator: Alexei Andrushievich <vint21h@vint21h.pp.ua>\n"
 "Language-Team: Alexei Andrushievich <vint21h@vint21h.pp.ua>\n"
@@ -19,6 +19,10 @@ msgstr ""
 #: djversion/apps.py:22
 msgid "Django project version"
 msgstr "Django project version"
+
+#: djversion/management/commands/print-version.py:24
+msgid "Print project version"
+msgstr "Print project version"
 
 #: djversion/rest.py:27
 msgid "version"
