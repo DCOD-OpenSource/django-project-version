@@ -74,11 +74,7 @@ Or you can use ``project_version`` templatetag which can be loaded from ``djvers
     {{ VERSION }}
 
 
-Also available simple management command ``print-version`` which prints project version to stdout. Just run:
-
-.. code-block:: bash
-
-    django-admin print-version
+Also simple management command ``print-version`` which prints project version to stdout is available. Just run: ``$ python manage.py print-version`` from project folder.
 
 Advanced features
 -----------------
