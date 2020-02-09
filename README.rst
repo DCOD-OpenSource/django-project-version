@@ -13,8 +13,8 @@ A django-project-version documentation
 
 Installation
 ------------
-* Obtain your copy of source code from the git repository: ``git clone https://github.com/DCOD-OpenSource/django-project-version.git``. Or download the latest release from https://github.com/DCOD-OpenSource/django-project-version/tags/.
-* Run ``python ./setup.py install`` from the repository source tree or unpacked archive. Or use pip: ``pip install django-project-version``.
+* Obtain your copy of source code from the git repository: ``$ git clone https://github.com/DCOD-OpenSource/django-project-version.git``. Or download the latest release from https://github.com/DCOD-OpenSource/django-project-version/tags/.
+* Run ``$ python ./setup.py install`` from the repository source tree or unpacked archive. Or use pip: ``$ pip install django-project-version``.
 
 Configuration
 -------------
@@ -27,7 +27,6 @@ Configuration
     INSTALLED_APPS += [
         "djversion",
     ]
-
 
 Settings
 --------
@@ -73,14 +72,13 @@ Or you can use ``project_version`` templatetag which can be loaded from ``djvers
     {% project_version as VERSION %}
     {{ VERSION }}
 
-
 Also simple management command ``print-version`` which prints project version to stdout is available. Just run: ``$ python manage.py print-version`` from project folder.
 
 Advanced features
 -----------------
 If you want to have REST-style view with your project version:
 
-* Install ``django-project-version`` with additional dependencies: ``pip install django-project-version[rest]``.
+* Install ``django-project-version`` with additional dependencies: ``$ pip install django-project-version[rest]``.
 * Extend you ``settings.INSTALLED_APPS`` by adding ``"rest_framework"``.
 
 .. code-block:: python
@@ -103,7 +101,7 @@ If you want to have REST-style view with your project version:
 
 Or to use information from the project git repository as project version:
 
-* Install ``django-project-version`` with additional dependencies: ``pip install django-project-version[git]``.
+* Install ``django-project-version`` with additional dependencies: ``$ pip install django-project-version[git]``.
 * Configure git related settings.
 
 Licensing

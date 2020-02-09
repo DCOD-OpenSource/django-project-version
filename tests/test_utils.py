@@ -38,7 +38,8 @@ class GetVersionUtilTest(TestCase):
     @override_settings(DJVERSION_FORMAT_STRING="{updated}: {version}")
     def test_get_version__with_custom_format_string(self) -> None:
         """
-        Util must return current version and updated date formatted using custom format string.  # noqa: E501
+        Util must return current version and
+        updated date formatted using custom format string.
 
         :return: nothing.
         :rtype: None.
