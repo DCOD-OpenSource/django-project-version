@@ -4,7 +4,6 @@
 # djversion/management/commands/print-version.py
 
 
-import sys
 from typing import Any, Dict, List  # pylint: disable=W0611
 
 from django.core.management.base import BaseCommand
@@ -35,6 +34,4 @@ class Command(BaseCommand):
         :rtype: None.
         """
 
-        version = get_version()
-
-        sys.stdout.write(f"{version}\n")
+        self.stdout.write(get_version())
