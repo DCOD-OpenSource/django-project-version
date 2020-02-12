@@ -95,6 +95,9 @@ If you want to have REST-style view with your project version:
 
     # urls.py
 
+    from django.conf.urls import url
+
+
     urlpatterns += [
         url(r"^version/", include("djversion.urls")),
     ]
