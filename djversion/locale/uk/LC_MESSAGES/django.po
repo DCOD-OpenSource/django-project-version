@@ -4,9 +4,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: django-project-version 0.9.0\n"
+"Project-Id-Version: django-project-version 0.9.1\n"
 "Report-Msgid-Bugs-To: Alexei Andrushievich <vint21h@vint21h.pp.ua>\n"
-"POT-Creation-Date: 2020-02-11 05:09+0200\n"
+"POT-Creation-Date: 2020-02-12 04:41+0200\n"
 "PO-Revision-Date: 2019-09-11 04:53+0300\n"
 "Last-Translator: Alexei Andrushievich <vint21h@vint21h.pp.ua>\n"
 "Language-Team: Alexei Andrushievich <vint21h@vint21h.pp.ua>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Django project version"
 msgstr "Django project version"
 
-#: djversion/management/commands/print-version.py:24
+#: djversion/management/commands/print-version.py:23
 msgid "Print project version"
 msgstr "Надрукувати версію проекту"
 
