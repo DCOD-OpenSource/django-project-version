@@ -33,5 +33,8 @@ class DjangoDjversionAppConf(AppConf):
     GIT_USE_COMMIT = getattr(settings, "DJVERSION_GIT_USE_COMMIT", False)  # type: bool
 
     class Meta:
+        """
+        Config settings.
+        """
 
         prefix = "djversion"  # type: str
