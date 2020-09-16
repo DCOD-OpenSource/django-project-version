@@ -6,8 +6,8 @@ import contextlib
 from io import StringIO
 from typing import List  # pylint: disable=W0611
 
-from django.core.management import call_command
 from django.test import TestCase
+from django.core.management import call_command
 
 
 __all__ = ["PrintVersionManagementCommandTest"]  # type: List[str]

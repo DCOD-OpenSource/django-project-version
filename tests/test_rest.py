@@ -6,8 +6,8 @@
 
 from typing import List  # pylint: disable=W0611
 
-from django.http import HttpRequest
 from django.test import TestCase
+from django.http import HttpRequest
 from rest_framework.response import Response  # pylint: disable=W0611
 
 from djversion.rest import VersionView

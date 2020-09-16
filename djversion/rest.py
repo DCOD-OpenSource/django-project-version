@@ -6,11 +6,11 @@
 
 from typing import Any, Dict, List, Type  # pylint: disable=W0611
 
-from django.utils.translation import ugettext_lazy as _
-from rest_framework.generics import GenericAPIView
-from rest_framework.permissions import AllowAny, BasePermission  # pylint: disable=W0611
 from rest_framework.response import Response
+from rest_framework.generics import GenericAPIView
+from django.utils.translation import ugettext_lazy as _
 from rest_framework.serializers import CharField, Serializer
+from rest_framework.permissions import AllowAny, BasePermission  # pylint: disable=W0611
 
 from djversion.utils import get_version
 

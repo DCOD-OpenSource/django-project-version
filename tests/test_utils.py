@@ -4,14 +4,14 @@
 # tests/test_utils.py
 
 
-import pathlib
 import shutil
+import pathlib
 from typing import List  # pylint: disable=W0611
 
-from django.test import TestCase
-from django.test.utils import override_settings
-from django.utils import translation
 import git
+from django.test import TestCase
+from django.utils import translation
+from django.test.utils import override_settings
 
 from djversion.conf import settings
 from djversion.utils import get_version

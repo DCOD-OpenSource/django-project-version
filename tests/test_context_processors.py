@@ -6,9 +6,9 @@
 
 from typing import Dict, List  # pylint: disable=W0611
 
-from django.http import HttpRequest
 from django.test import TestCase
 from django.utils import timezone
+from django.http import HttpRequest
 
 from djversion.context_processors import version
 

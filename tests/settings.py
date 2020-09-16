@@ -4,10 +4,10 @@
 # tests/settings.py
 
 
-from datetime import date
-import pathlib
-import random
 import sys
+import random
+import pathlib
+from datetime import date
 from typing import Dict, List, Union  # pylint: disable=W0611
 
 
