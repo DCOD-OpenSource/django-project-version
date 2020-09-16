@@ -41,7 +41,7 @@ repos:
       name: interrogate
       stages: [commit]
       language: system
-      entry: interrogate djversion tests -I -M
+      entry: pipenv run interrogate djversion tests -I -M
       types: [python]
     - id: pylint
       name: pylint
