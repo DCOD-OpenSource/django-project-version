@@ -26,12 +26,10 @@ class Command(BaseCommand):
         """
         Perform command.
 
-        :param args: additional args.
-        :type args: List[Any].
-        :param kwargs: additional args.
-        :type kwargs: Dict[str, Any].
-        :return: nothing.
-        :rtype: None.
+        :param args: additional args
+        :type args: List[Any]
+        :param kwargs: additional args
+        :type kwargs: Dict[str, Any]
         """
 
         self.stdout.write(get_version())

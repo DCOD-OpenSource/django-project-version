@@ -18,10 +18,10 @@ def version(request: HttpRequest) -> Dict[str, str]:
     """
     Return formatted version string named as "VERSION" to context.
 
-    :param request: django HTTP request object.
-    :type request: django.http.request.HttpRequest.
-    :return: formatted version string named as "VERSION".
-    :rtype: Dict[str, str].
+    :param request: django HTTP request object
+    :type request: HttpRequest
+    :return: formatted version string named as "VERSION"
+    :rtype: Dict[str, str]
     """
 
     return {"VERSION": get_version()}

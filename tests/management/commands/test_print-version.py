@@ -21,9 +21,6 @@ class PrintVersionManagementCommandTest(TestCase):
     def test_handle(self) -> None:
         """
         Must return version to stdout.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         out = StringIO()

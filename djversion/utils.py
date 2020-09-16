@@ -26,8 +26,8 @@ def get_version() -> str:
     """
     Format version string.
 
-    :return: formatted version string.
-    :rtype: str.
+    :return: formatted version string
+    :rtype: str
     """
 
     if all(

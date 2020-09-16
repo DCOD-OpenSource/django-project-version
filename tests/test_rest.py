@@ -24,9 +24,6 @@ class VersionViewTest(TestCase):
     def test_get(self) -> None:
         """
         Method must return response containing version.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         request = HttpRequest()  # type: HttpRequest

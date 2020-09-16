@@ -40,12 +40,12 @@ class VersionView(GenericAPIView):
         """
         Handle GET http request.
 
-        :param request: django request instance.
-        :type request: django.http.request.HttpRequest.
-        :param kwargs: additional args.
-        :type kwargs: Dict[str, Any].
-        :return: serialized custom queryset response.
-        :rtype: rest_framework.response.Response.
+        :param request: django request instance
+        :type request: HttpRequest
+        :param kwargs: additional args
+        :type kwargs: Dict[str, Any]
+        :return: serialized custom queryset response
+        :rtype: Response
         """
 
         data = {"version": get_version()}  # type: Dict[str, str]

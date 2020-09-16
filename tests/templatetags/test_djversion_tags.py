@@ -22,9 +22,6 @@ class ProjectVersionTemplatetagTest(TestCase):
     def test_project_version(self) -> None:
         """
         Must return formatted version tag.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         result = project_version()  # type: str

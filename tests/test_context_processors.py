@@ -27,9 +27,6 @@ class VersionContextProcessorTest(TestCase):
     def test_version(self) -> None:
         """
         Must return formatted new context variable with version.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         request = HttpRequest()  # type: HttpRequest

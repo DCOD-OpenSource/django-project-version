@@ -28,9 +28,6 @@ class GetVersionUtilTest(TestCase):
     def test_get_version(self) -> None:
         """
         Util must return current version and updated date formatted using format string.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         self.assertEqual(first=get_version(), second="1.0.1 (Aug. 24, 1991)")
@@ -40,9 +37,6 @@ class GetVersionUtilTest(TestCase):
         """
         Util must return current version and
         updated date formatted using custom format string.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         with translation.override("en"):
@@ -52,9 +46,6 @@ class GetVersionUtilTest(TestCase):
     def test_get_version__without_updated(self) -> None:
         """
         Util must return current version.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         with translation.override("en"):
@@ -64,9 +55,6 @@ class GetVersionUtilTest(TestCase):
     def test_get_version__without_version(self) -> None:
         """
         Util must return updated.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         with translation.override("en"):
@@ -76,9 +64,6 @@ class GetVersionUtilTest(TestCase):
     def test_get_version__without_settings(self) -> None:
         """
         Util must return empty string.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         with translation.override("en"):
@@ -93,9 +78,6 @@ class GetVersionUtilTest(TestCase):
     def test_get_version__with_git_tag(self) -> None:
         """
         Util must return current tag from git repo from path.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         path = pathlib.Path(settings.DJVERSION_GIT_REPO_PATH)  # type: ignore
@@ -126,9 +108,6 @@ class GetVersionUtilTest(TestCase):
     def test_get_version__with_git_commit(self) -> None:
         """
         Util must return last commit from git repo from path.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         path = pathlib.Path(settings.DJVERSION_GIT_REPO_PATH)  # type: ignore
