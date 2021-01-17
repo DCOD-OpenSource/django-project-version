@@ -5,7 +5,7 @@
 A django-project-version documentation
 ======================================
 
-|Travis|_ |Coveralls|_ |Requires|_ |pypi-license|_ |pypi-version|_ |pypi-python-version|_ |pypi-django-version|_ |pypi-format|_ |pypi-wheel|_ |pypi-status|_
+|GitHub|_ |Coveralls|_ |Requires|_ |pypi-license|_ |pypi-version|_ |pypi-python-version|_ |pypi-django-version|_ |pypi-format|_ |pypi-wheel|_ |pypi-status|_
 
     *django-project-version is a Django reusable app to show your project version*
 
@@ -95,11 +95,11 @@ If you want to have REST-style view with your project version:
 
     # urls.py
 
-    from django.conf.urls import url
+    from django.urls import re_path, include
 
 
     urlpatterns += [
-        url(r"^version/", include("djversion.urls")),
+        re_path(r"^version/", include("djversion.urls")),
     ]
 
 Or to use information from the project git repository as project version:
@@ -120,8 +120,8 @@ Contacts
 For other authors list see AUTHORS file.
 
 
-.. |Travis| image:: https://travis-ci.org/DCOD-OpenSource/django-project-version.svg?branch=master
-    :alt: Travis
+.. |GitHub| image:: https://github.com/vint21h/django-project-version/workflows/build/badge.svg
+    :alt: GitHub
 .. |Coveralls| image:: https://coveralls.io/repos/github/DCOD-OpenSource/django-project-version/badge.svg?branch=master
     :alt: Coveralls
 .. |Requires| image:: https://requires.io/github/DCOD-OpenSource/django-project-version/requirements.svg?branch=master
@@ -140,7 +140,7 @@ For other authors list see AUTHORS file.
     :alt: Python wheel support
 .. |pypi-status| image:: https://img.shields.io/pypi/status/django-project-version
     :alt: Package status
-.. _Travis: https://travis-ci.org/DCOD-OpenSource/django-project-version/
+.. _GitHub: https://github.com/vint21h/django-project-version/actions/
 .. _Coveralls: https://coveralls.io/github/DCOD-OpenSource/django-project-version?branch=master
 .. _Requires: https://requires.io/github/DCOD-OpenSource/django-project-version/requirements/?branch=master
 .. _pypi-license: https://pypi.org/project/django-project-version/

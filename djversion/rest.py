@@ -8,7 +8,7 @@ from typing import Any, Dict, List, Type  # pylint: disable=W0611
 
 from rest_framework.response import Response
 from rest_framework.generics import GenericAPIView
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from rest_framework.serializers import CharField, Serializer
 from rest_framework.permissions import AllowAny, BasePermission  # pylint: disable=W0611
 
@@ -18,7 +18,7 @@ from djversion.utils import get_version
 __all__ = ["VersionSerializer", "VersionView"]  # type: List[str]
 
 
-class VersionSerializer(Serializer):
+class VersionSerializer(Serializer):  # type: ignore
     """
     Version serializer.
     """
@@ -28,13 +28,15 @@ class VersionSerializer(Serializer):
     )  # type: CharField
 
 
-class VersionView(GenericAPIView):
+class VersionView(GenericAPIView):  # type: ignore
     """
     Version view.
     """
 
     permission_classes = [AllowAny]  # type: List[Type[BasePermission]]
     serializer_class = VersionSerializer  # type: Type[VersionSerializer]
+    pagination_class = None
+    filter_backends = None  # type: ignore
 
     def get(self, request, **kwargs: Dict[str, Any]) -> Response:
         """

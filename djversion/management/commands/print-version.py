@@ -7,7 +7,7 @@
 from typing import Any, Dict, List  # pylint: disable=W0611
 
 from django.core.management.base import BaseCommand
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from djversion.utils import get_version
 
