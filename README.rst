@@ -120,7 +120,7 @@ Contacts
 For other authors list see AUTHORS file.
 
 
-.. |GitHub| image:: https://github.com/vint21h/django-project-version/workflows/build/badge.svg
+.. |GitHub| image:: https://github.com/DCOD-OpenSource/django-project-version/workflows/build/badge.svg
     :alt: GitHub
 .. |Coveralls| image:: https://coveralls.io/repos/github/DCOD-OpenSource/django-project-version/badge.svg?branch=master
     :alt: Coveralls
@@ -140,7 +140,7 @@ For other authors list see AUTHORS file.
     :alt: Python wheel support
 .. |pypi-status| image:: https://img.shields.io/pypi/status/django-project-version
     :alt: Package status
-.. _GitHub: https://github.com/vint21h/django-project-version/actions/
+.. _GitHub: https://github.com/DCOD-OpenSource/django-project-version/actions/
 .. _Coveralls: https://coveralls.io/github/DCOD-OpenSource/django-project-version?branch=master
 .. _Requires: https://requires.io/github/DCOD-OpenSource/django-project-version/requirements/?branch=master
 .. _pypi-license: https://pypi.org/project/django-project-version/
