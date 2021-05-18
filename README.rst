@@ -5,7 +5,7 @@
 A django-project-version documentation
 ======================================
 
-|GitHub|_ |Coveralls|_ |Requires|_ |pypi-license|_ |pypi-version|_ |pypi-python-version|_ |pypi-django-version|_ |pypi-format|_ |pypi-wheel|_ |pypi-status|_
+|GitHub|_ |Coveralls|_ |pypi-license|_ |pypi-version|_ |pypi-python-version|_ |pypi-django-version|_ |pypi-format|_ |pypi-wheel|_ |pypi-status|_
 
     *django-project-version is a Django reusable app to show your project version*
 
@@ -124,8 +124,6 @@ For other authors list see AUTHORS file.
     :alt: GitHub
 .. |Coveralls| image:: https://coveralls.io/repos/github/DCOD-OpenSource/django-project-version/badge.svg?branch=master
     :alt: Coveralls
-.. |Requires| image:: https://requires.io/github/DCOD-OpenSource/django-project-version/requirements.svg?branch=master
-    :alt: Requires
 .. |pypi-license| image:: https://img.shields.io/pypi/l/django-project-version
     :alt: License
 .. |pypi-version| image:: https://img.shields.io/pypi/v/django-project-version
@@ -142,7 +140,6 @@ For other authors list see AUTHORS file.
     :alt: Package status
 .. _GitHub: https://github.com/DCOD-OpenSource/django-project-version/actions/
 .. _Coveralls: https://coveralls.io/github/DCOD-OpenSource/django-project-version?branch=master
-.. _Requires: https://requires.io/github/DCOD-OpenSource/django-project-version/requirements/?branch=master
 .. _pypi-license: https://pypi.org/project/django-project-version/
 .. _pypi-version: https://pypi.org/project/django-project-version/
 .. _pypi-django-version: https://pypi.org/project/django-project-version/
