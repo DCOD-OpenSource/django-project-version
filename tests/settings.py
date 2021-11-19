@@ -5,54 +5,58 @@
 
 
 import sys
-import random
 import pathlib
 from datetime import date
-from typing import Dict, List, Union  # pylint: disable=W0611
+from random import SystemRandom
+from typing import Dict, List, Union
 
 
 # black magic to use imports from library code
-sys.path.insert(0, str(pathlib.Path(__file__).absolute().parent.parent.parent))
+path = pathlib.Path(__file__).absolute()
+project = path.parent.parent.parent
+sys.path.insert(0, str(project))
 
 # secret key
-SECRET_KEY = "".join(
+SECRET_KEY: str = "".join(
     [
-        random.choice("abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)")  # nosec
+        SystemRandom().choice("abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)")
         for i in range(50)
     ]
-)  # type: str
+)
 
 # configure databases
-DATABASES = {
+DATABASES: Dict[str, Dict[str, str]] = {
     "default": {"ENGINE": "django.db.backends.sqlite3", "NAME": ":memory:"}
-}  # type: Dict[str, Dict[str, str]]
+}
 
 # configure templates
-TEMPLATES = [
+TEMPLATES: List[Dict[str, Union[str, List[str], bool, Dict[str, str]]]] = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [],
         "APP_DIRS": True,
         "OPTIONS": {},
     }
-]  # type: List[Dict[str, Union[str, List[str], bool, Dict[str, str]]]]
+]
 
 
 # add testing related apps
-INSTALLED_APPS = [
+INSTALLED_APPS: List[str] = [
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "djversion",
-]  # type: List[str]
+]
 
 # configure urls
-ROOT_URLCONF = "djversion.urls"  # type: str
+ROOT_URLCONF: str = "djversion.urls"
 
 # drf settings
-REST_FRAMEWORK = {"DEFAULT_RENDERER_CLASSES": ["rest_framework.renderers.JSONRenderer"]}
+REST_FRAMEWORK: Dict[str, List[str]] = {
+    "DEFAULT_RENDERER_CLASSES": ["rest_framework.renderers.JSONRenderer"]
+}
 
 
 # djversion settings
-DJVERSION_VERSION = "1.0.1"  # type: str
-DJVERSION_UPDATED = date(1991, 8, 24)  # type: date
-DJVERSION_FORMAT_STRING = "{version} ({updated})"  # type: str
+DJVERSION_VERSION: str = "1.0.1"
+DJVERSION_UPDATED: date = date(1991, 8, 24)
+DJVERSION_FORMAT_STRING: str = "{version} ({updated})"  # noqa: FS003

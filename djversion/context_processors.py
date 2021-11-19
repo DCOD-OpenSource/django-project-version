@@ -4,14 +4,14 @@
 # djversion/context_processors.py
 
 
-from typing import Dict, List  # pylint: disable=W0611
+from typing import Dict, List
 
 from django.http import HttpRequest
 
 from djversion.utils import get_version
 
 
-__all__ = ["version"]  # type: List[str]
+__all__: List[str] = ["version"]
 
 
 def version(request: HttpRequest) -> Dict[str, str]:
@@ -23,5 +23,4 @@ def version(request: HttpRequest) -> Dict[str, str]:
     :return: formatted version string named as "VERSION"
     :rtype: Dict[str, str]
     """
-
     return {"VERSION": get_version()}

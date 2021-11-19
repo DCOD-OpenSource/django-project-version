@@ -4,37 +4,33 @@
 # djversion/rest.py
 
 
-from typing import Any, Dict, List, Type  # pylint: disable=W0611
+from typing import Any, Dict, List, Type
 
 from rest_framework.response import Response
 from rest_framework.generics import GenericAPIView
 from django.utils.translation import gettext_lazy as _
 from rest_framework.serializers import CharField, Serializer
-from rest_framework.permissions import AllowAny, BasePermission  # pylint: disable=W0611
+from rest_framework.permissions import AllowAny, BasePermission
 
 from djversion.utils import get_version
 
 
-__all__ = ["VersionSerializer", "VersionView"]  # type: List[str]
+__all__: List[str] = ["VersionSerializer", "VersionView"]
 
 
 class VersionSerializer(Serializer):  # type: ignore
-    """
-    Version serializer.
-    """
+    """Version serializer."""
 
     version = CharField(
         label=_("version"), help_text=_("project version"), read_only=True
-    )  # type: CharField
+    )
 
 
 class VersionView(GenericAPIView):  # type: ignore
-    """
-    Version view.
-    """
+    """Version view."""
 
-    permission_classes = [AllowAny]  # type: List[Type[BasePermission]]
-    serializer_class = VersionSerializer  # type: Type[VersionSerializer]
+    permission_classes: List[Type[BasePermission]] = [AllowAny]
+    serializer_class: Type[VersionSerializer] = VersionSerializer
     pagination_class = None
     filter_backends = None  # type: ignore
 
@@ -49,8 +45,7 @@ class VersionView(GenericAPIView):  # type: ignore
         :return: serialized custom queryset response
         :rtype: Response
         """
-
-        data = {"version": get_version()}  # type: Dict[str, str]
+        data: Dict[str, str] = {"version": get_version()}
         serializer = self.get_serializer(instance=data)
 
         return Response(serializer.data)

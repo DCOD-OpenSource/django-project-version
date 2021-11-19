@@ -4,14 +4,14 @@
 # djversion/templatetags/djversion_tags.py
 
 
-from typing import List  # pylint: disable=W0611
+from typing import List
 
 from django import template
 
 from djversion.utils import get_version
 
 
-__all__ = ["project_version"]  # type: List[str]
+__all__: List[str] = ["project_version"]
 
 
 register = template.Library()
@@ -25,5 +25,4 @@ def project_version() -> str:
     :return: formatted project version
     :rtype: str
     """
-
     return get_version()

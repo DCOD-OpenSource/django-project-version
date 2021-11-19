@@ -4,8 +4,8 @@
 # djversion/utils.py
 
 
+from typing import List
 from datetime import date, datetime
-from typing import List  # pylint: disable=W0611
 
 from django.templatetags.l10n import localize
 
@@ -16,20 +16,20 @@ from djversion.conf import settings
 try:
     from git import Repo
 except ImportError:
-    Repo = None
+    Repo = None  # type: ignore
 
 
-__all__ = ["get_version"]  # type: List[str]
+__all__: List[str] = ["get_version"]
 
 
-def get_version() -> str:
+def get_version() -> str:  # noqa: CCR001
     """
     Format version string.
 
     :return: formatted version string
     :rtype: str
     """
-
+    version = ""
     if all(
         [
             settings.DJVERSION_VERSION,
@@ -43,19 +43,16 @@ def get_version() -> str:
             settings.DJVERSION_FORMAT_STRING,
         ]
     ):
-
-        return settings.DJVERSION_FORMAT_STRING.format(
+        version = settings.DJVERSION_FORMAT_STRING.format(
             **{
                 "version": settings.DJVERSION_VERSION,
                 "updated": localize(settings.DJVERSION_UPDATED),
             }
         )
     elif settings.DJVERSION_VERSION:
-
-        return settings.DJVERSION_VERSION
+        version = settings.DJVERSION_VERSION
     elif settings.DJVERSION_UPDATED:
-
-        return (
+        version = (
             localize(settings.DJVERSION_UPDATED)
             if any(
                 [
@@ -67,25 +64,19 @@ def get_version() -> str:
         )
     elif all([Repo, settings.DJVERSION_GIT_REPO_PATH]):  # type: ignore
         try:
-
             repo = Repo(settings.DJVERSION_GIT_REPO_PATH)  # type: ignore
-
             if settings.DJVERSION_GIT_USE_TAG:  # type: ignore
-
                 tag = next(
                     (tag for tag in repo.tags if tag.commit == repo.head.commit), None
                 )
-
-                return tag.name if tag else ""
+                version = tag.name if tag else ""
             elif settings.DJVERSION_GIT_USE_COMMIT:  # type: ignore
-
-                return repo.head.commit.hexsha if repo.head.commit else ""
+                version = repo.head.commit.hexsha if repo.head.commit else ""
             else:
-
-                return ""
+                version = ""
         except Exception:
-
-            return ""
+            version = ""
     else:
+        version = ""
 
-        return ""
+    return version  # noqa: R504

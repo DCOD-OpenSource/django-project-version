@@ -107,6 +107,50 @@ Or to use information from the project git repository as project version:
 * Install ``django-project-version`` with additional dependencies: ``$ pip install django-project-version[git]``.
 * Configure git related settings.
 
+Contributing
+------------
+1. `Fork it <https://github.com/DCOD-OpenSource/django-project-version/>`_
+2. Install `GNU Make <https://www.gnu.org/software/make/>`_
+3. Install and configure `pyenv <https://github.com/pyenv/pyenv/>`_ and `pyenv-virtualenv plugin <https://github.com/pyenv/pyenv-virtualenv/>`_
+4. Install and configure `direnv <https://github.com/direnv/direnv/>`_
+5. Create environment config from example
+
+.. code-block:: bash
+
+    cp .env.example .env
+
+6. Install development dependencies:
+
+.. code-block:: bash
+
+    make install
+
+7. Create your fix/feature branch:
+
+.. code-block:: bash
+
+    git checkout -b my-new-fix-or-feature
+
+8. Check code style and moreover:
+
+.. code-block:: bash
+
+    make check
+
+9. Run tests:
+
+.. code-block:: bash
+
+    make test
+
+10. Push to the branch:
+
+.. code-block:: bash
+
+    git push origin my-new-fix-or-feature
+
+11. `Create a new Pull Request <https://github.com/DCOD-OpenSource/django-project-version/compare/>`_
+
 Licensing
 ---------
 django-project-version uses the MIT license. Please check the MIT-LICENSE file for more details.

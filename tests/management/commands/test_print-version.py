@@ -1,28 +1,25 @@
 # -*- coding: utf-8 -*-
 
 # django-project-version
-# tests/management/commands/test_print-version.py
+# tests/management/commands/test_print-version.py  # noqa: E800
+
+
 import contextlib
 from io import StringIO
-from typing import List  # pylint: disable=W0611
+from typing import List
 
 from django.test import TestCase
 from django.core.management import call_command
 
 
-__all__ = ["PrintVersionManagementCommandTest"]  # type: List[str]
+__all__: List[str] = ["PrintVersionManagementCommandTest"]
 
 
 class PrintVersionManagementCommandTest(TestCase):
-    """
-    Print version management command tests.
-    """
+    """Print version management command tests."""
 
     def test_handle(self) -> None:
-        """
-        Must return version to stdout.
-        """
-
+        """Must return version to stdout."""
         out = StringIO()
 
         with contextlib.redirect_stdout(out):
