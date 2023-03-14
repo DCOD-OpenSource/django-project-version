@@ -1,15 +1,5 @@
 name: "check-requirements"
 on:
-  push:
-    branches:
-      - "*"
-    tags:
-      - "*"
-  pull_request:
-    branches:
-      - "*"
-  schedule:
-    - cron: "0 3 * * *"
   workflow_dispatch:
   workflow_call:
 env:
