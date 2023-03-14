@@ -1,0 +1,47 @@
+name: "check"
+on:
+  workflow_dispatch:
+  workflow_call:
+env:
+  NAME: "djversion"
+  DEFAULT_PYTHON_VERSION: "3.11"
+jobs:
+  check:
+    name: "${{ matrix.toxenv }}"
+    runs-on: "ubuntu-latest"
+    strategy:
+      matrix:
+        toxenv: ["check", "check-build"]
+    steps:
+      - name: "Git clone"
+        id: "git-clone"
+        uses: "actions/checkout@v3.3.0"
+      - name: "Set up Python ${{ env.DEFAULT_PYTHON_VERSION }}"
+        id: "set-up-python"
+        uses: "actions/setup-python@v4.5.0"
+        with:
+          python-version: "${{ env.DEFAULT_PYTHON_VERSION }}"
+      - name: "Pip cache"
+        id: "pip-cache"
+        uses: "actions/cache@v3.3.1"
+        with:
+          path: "~/.cache/pip"
+          key: "${{ runner.os }}-pip-${{ matrix.toxenv }}-${{ hashFiles('setup.cfg') }}"
+          restore-keys: |
+            "${{ runner.os }}-pip-${{ matrix.toxenv }}-"
+            "${{ runner.os }}-pip-"
+      - name: "Pre-commit cache"
+        id: "pre-commit-cache"
+        uses: "actions/cache@v3.3.1"
+        with:
+          path: "~/.cache/pre-commit"
+          key: "${{ runner.os }}-pre-commit-${{ matrix.toxenv }}-${{ hashFiles('.pre-commit-config.yaml') }}"
+          restore-keys: |
+            "${{ runner.os }}-pre-commit-${{ matrix.toxenv }}-"
+            "${{ runner.os }}-pre-commit-"
+      - name: "Install requirements"
+        id: "install-requirements"
+        run: "make install"
+      - name: "Run ${{ matrix.toxenv }}"
+        id: "run"
+        run: "tox -e ${{ matrix.toxenv }}"

@@ -1,22 +1,13 @@
-name: "check-requirements"
+name: "coveralls"
 on:
-  push:
-    branches:
-      - "*"
-    tags:
-      - "*"
-  pull_request:
-    branches:
-      - "*"
-  schedule:
-    - cron: "0 3 * * *"
   workflow_dispatch:
   workflow_call:
 env:
+  NAME: "djversion"
   DEFAULT_PYTHON_VERSION: "3.11"
 jobs:
-  check-requirements:
-    name: "check-requirements"
+  coveralls:
+    name: "coveralls"
     runs-on: "ubuntu-latest"
     steps:
       - name: "Git clone"
@@ -35,10 +26,17 @@ jobs:
           key: "${{ runner.os }}-pip-${{ hashFiles('setup.cfg') }}"
           restore-keys: |
             "${{ runner.os }}-pip-"
+      - name: "Temporarily save coverage statistics"
+        id: "temporarily-save-coverage-statistics"
+        uses: "actions/cache@v3.3.1"
+        with:
+          path: ".coverage"
+          key: ".coverage-${{ github.run_id }}-${{ github.run_number }}"
       - name: "Install requirements"
         id: "install-requirements"
         run: "make install"
-      - name: "Check outdated requirements"
-        id: "check-outdated-requirements"
-        continue-on-error: true
-        run: "pip-outdated"
+      - name: "Upload coverage report to Coveralls"
+        id: "upload-coverage-report-to-coveralls"
+        env:
+          COVERALLS_REPO_TOKEN: "${{ secrets.COVERALLS_REPO_TOKEN }}"
+        run: "make coveralls"
