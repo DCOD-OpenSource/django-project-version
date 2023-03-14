@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-
-# django-project-version
-# djversion/context_processors.py
-
-
 from typing import Dict, List
 
 from django.http import HttpRequest

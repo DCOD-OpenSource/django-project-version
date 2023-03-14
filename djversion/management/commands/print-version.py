@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-
-# django-project-version
-# djversion/management/commands/print-version.py  # noqa: E800
-
-
 from typing import Any, Dict, List
 
 from django.core.management.base import BaseCommand

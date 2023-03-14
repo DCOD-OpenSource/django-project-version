@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-
-# django-project-version
-# djversion/utils.py
-
-
 from typing import List
 from datetime import date, datetime
 

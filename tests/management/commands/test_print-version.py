@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-
-# django-project-version
-# tests/management/commands/test_print-version.py  # noqa: E800
-
-
 import contextlib
 from io import StringIO
 from typing import List

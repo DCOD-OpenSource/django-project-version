@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-
-# django-project-version
-# tests/settings.py
-
-
 import sys
 import pathlib
 from datetime import date

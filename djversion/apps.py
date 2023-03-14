@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-
-# django-project-version
-# djversion/apps.py
-
-
 from typing import List
 
 from django.apps import AppConfig

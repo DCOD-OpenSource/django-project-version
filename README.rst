@@ -1,7 +1,3 @@
-.. django-project-version
-.. README.rst
-
-
 A django-project-version documentation
 ======================================
 
@@ -161,7 +157,7 @@ Contacts
 
 **Author**: DCOD <contact@d-cod.com>
 
-For other authors list see AUTHORS file.
+For contributors list see CONTRIBUTORS file.
 
 
 .. |GitHub| image:: https://github.com/DCOD-OpenSource/django-project-version/workflows/build/badge.svg

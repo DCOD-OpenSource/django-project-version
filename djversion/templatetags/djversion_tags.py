@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-
-# django-project-version
-# djversion/templatetags/djversion_tags.py
-
-
 from typing import List
 
 from django import template

@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-
-# django-project-version
-# djversion/urls.py
-
-
 from typing import List, Union
 
 from django.urls import re_path

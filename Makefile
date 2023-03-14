@@ -1,7 +1,3 @@
-# django-project-version
-# Makefile
-
-
 .ONESHELL:
 PHONY: install tox test makemessages compilemessages bumpversion build sign check check-build check-upload upload clean coveralls release help
 TEST_PYPI_URL ?= https://test.pypi.org/legacy/
@@ -16,54 +12,42 @@ VERSION ?= `python -c "import configparser; config = configparser.ConfigParser()
 install:
 	pip install .[test];\
 
-
 tox:
 	tox;\
 
-
 test:
 	bash -c 'PYTHONPATH="$${PYTHONPATH}:$${PWD}" py.test --cov=$(NAME) --modules-durations=0 --functions-durations=0 --instafail $(TESTS)';\
-
 
 makemessages:
 	for locale in `ls $(NAME)/locale`; do\
 		django-admin makemessages --locale=$${locale} --extension=$(EXTENSIONS);\
 	done;\
 
-
 compilemessages:
 	django-admin compilemessages;\
-
 
 bumpversion:
 	git tag -a $(VERSION) -m "v$(VERSION)";\
 
-
 build:
 	python setup.py $(BUILD_TYPES);\
-
 
 sign:
 	for package in `ls dist`; do\
 		gpg -a --detach-sign dist/$${package};\
 	done;\
 
-
 check:
 	bash -c 'NAME="$(NAME)" pre-commit run --all-files';\
-
 
 check-build:
 	twine check dist/*;\
 
-
 check-upload:
 	twine upload --skip-existing -s --repository-url $(TEST_PYPI_URL) -u __token__ -p $${TEST_TWINE_PASSWORD} dist/*;\
 
-
 upload:
 	twine upload --skip-existing -s dist/*;\
-
 
 clean:
 	for file in $(TRASH_FILES); do\
@@ -73,10 +57,8 @@ clean:
 		find -type d -name $${dir} ! -path "*/.direnv/*" -print0 | xargs -0 rm -rf;\
 	done;\
 
-
 coveralls:
 	coveralls;\
-
 
 release:
 	make clean && \
@@ -92,7 +74,6 @@ release:
 	make check-upload && \
 	make upload && \
 	make clean;\
-
 
 help:
 	@echo "    help:"

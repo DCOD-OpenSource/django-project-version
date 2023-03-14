@@ -1,10 +1,5 @@
 #!/usr/bin/env python
 
-# -*- coding: utf-8 -*-
-
-# django-project-version
-# setup.py
-
 
 import setuptools
 

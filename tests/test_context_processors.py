@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-
-# django-project-version
-# tests/test_context_processors.py
-
-
 from typing import Dict, List
 
 from django.test import TestCase

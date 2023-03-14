@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-
-# django-djversion
-# tests/test_utils.py
-
-
 import shutil
 from typing import List
 from pathlib import Path

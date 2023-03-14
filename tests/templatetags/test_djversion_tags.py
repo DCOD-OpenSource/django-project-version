@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-
-# django-project-version
-# tests/templatetags/test_djversion_tags.py
-
-
 from typing import List
 
 from django.test import TestCase

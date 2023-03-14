@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-
-# django-djversion
-# tests/test_rest.py
-
-
 from typing import List
 
 from django.test import TestCase

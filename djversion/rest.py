@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-
-# django-project-version
-# djversion/rest.py
-
-
 from typing import Any, Dict, List, Type
 
 from rest_framework.response import Response
