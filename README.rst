@@ -68,7 +68,7 @@ Or you can use ``project_version`` templatetag which can be loaded from ``djvers
     {% project_version as VERSION %}
     {{ VERSION }}
 
-Also simple management command ``print-version`` which prints project version to stdout is available. Just run: ``$ python ./manage.py print-version`` from project folder.
+Also simple management command ``print-version`` which prints project version to stdout is available. Just run: ``$ django-admin print-version``.
 
 Advanced features
 -----------------
@@ -105,47 +105,47 @@ Or to use information from the project git repository as project version:
 
 Contributing
 ------------
-1. `Fork it <https://github.com/DCOD-OpenSource/django-project-version/>`_
-2. Install `GNU Make <https://www.gnu.org/software/make/>`_
-3. Install and configure `pyenv <https://github.com/pyenv/pyenv/>`_ and `pyenv-virtualenv plugin <https://github.com/pyenv/pyenv-virtualenv/>`_
-4. Install and configure `direnv <https://github.com/direnv/direnv/>`_
-5. Create environment config from example
+- `Fork it <https://github.com/DCOD-OpenSource/django-project-version/>`_
+- Install `GNU Make <https://www.gnu.org/software/make/>`_
+- Install and configure `pyenv <https://github.com/pyenv/pyenv/>`_ and `pyenv-virtualenv plugin <https://github.com/pyenv/pyenv-virtualenv/>`_
+- Install and configure `direnv <https://github.com/direnv/direnv/>`_
+- Create environment config from example
 
 .. code-block:: bash
 
     cp .env.example .env
 
-6. Install development dependencies:
+- Install development dependencies:
 
 .. code-block:: bash
 
     make install
 
-7. Create your fix/feature branch:
+- Create your fix/feature branch:
 
 .. code-block:: bash
 
     git checkout -b my-new-fix-or-feature
 
-8. Check code style and moreover:
+- Check code style and moreover:
 
 .. code-block:: bash
 
     make check
 
-9. Run tests:
+- Run tests:
 
 .. code-block:: bash
 
     make test
 
-10. Push to the branch:
+- Push to the branch:
 
 .. code-block:: bash
 
     git push origin my-new-fix-or-feature
 
-11. `Create a new Pull Request <https://github.com/DCOD-OpenSource/django-project-version/compare/>`_
+- `Create a new Pull Request <https://github.com/DCOD-OpenSource/django-project-version/compare/>`_
 
 Licensing
 ---------

@@ -1,7 +1,3 @@
-<!--- django-project-version -->
-<!--- .github/SECURITY.md -->
-
-
 # Security Policy
 
 ## Supported Versions

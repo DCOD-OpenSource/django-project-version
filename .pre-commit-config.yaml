@@ -127,6 +127,18 @@ repos:
       types: ["text"]
       files: '\.env*'
       exclude: ".envrc"
+    - id: "rstcheck"
+      name: "rstcheck"
+      entry: "rstcheck"
+      language: "system"
+      stages: ["commit"]
+      types: ["rst"]
+    - id: "markdown-linter"
+      name: "markdown-linter"
+      entry: "pymarkdown -d md013 scan"
+      language: "system"
+      stages: ["commit"]
+      types: ["markdown"]
 -   repo: "https://github.com/pre-commit/pre-commit-hooks"
     rev: "v4.4.0"
     hooks:
@@ -143,3 +155,7 @@ repos:
       - id: "end-of-file-fixer"
       - id: "forbid-new-submodules"
       - id: "trailing-whitespace"
+- repo: "https://github.com/Anadea/pre-commit-config-shellcheck"
+  rev: "0.3.4"
+  hooks:
+    - id: "pre-commit-config-shellcheck"
