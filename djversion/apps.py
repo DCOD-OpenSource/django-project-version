@@ -17,4 +17,4 @@ class DjangoDjversionConfig(AppConfig):
     """Application config."""
 
     name: str = "djversion"
-    verbose_name: str = _("Django project version")
+    verbose_name: str = _("Django project version")  # type: ignore

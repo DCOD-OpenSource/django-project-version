@@ -16,7 +16,7 @@ on:
     - cron: "0 3 * * *"
   workflow_dispatch:
 env:
-  DEFAULT_PYTHON_VERSION: "3.10"
+  DEFAULT_PYTHON_VERSION: "3.11"
 jobs:
   check-requirements:
     name: "check-requirements"
@@ -24,15 +24,15 @@ jobs:
     steps:
       - name: "Git clone"
         id: "git-clone"
-        uses: "actions/checkout@v2"
+        uses: "actions/checkout@v3.3.0"
       - name: "Set up Python ${{ env.DEFAULT_PYTHON_VERSION }}"
         id: "set-up-python"
-        uses: "actions/setup-python@v2"
+        uses: "actions/setup-python@v4.5.0"
         with:
           python-version: "${{ env.DEFAULT_PYTHON_VERSION }}"
       - name: "Pip cache"
         id: "pip-cache"
-        uses: "actions/cache@v2"
+        uses: "actions/cache@v3.3.1"
         with:
           path: "~/.cache/pip"
           key: "${{ runner.os }}-pip-${{ hashFiles('setup.cfg') }}"
