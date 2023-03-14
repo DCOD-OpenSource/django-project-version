@@ -38,5 +38,5 @@ jobs:
       - name: "Upload coverage report to Coveralls"
         id: "upload-coverage-report-to-coveralls"
         env:
-          COVERALLS_REPO_TOKEN: "${{ secrets.COVERALLS_REPO_TOKEN }}"
-        run: "make coveralls"
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        run: "coveralls --service=github"
