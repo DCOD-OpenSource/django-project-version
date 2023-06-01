@@ -1,4 +1,5 @@
 .ONESHELL:
+default: help
 PHONY: install tox test makemessages compilemessages bumpversion build sign check check-build check-upload upload clean coveralls release help
 TEST_PYPI_URL ?= https://test.pypi.org/legacy/
 NAME ?= djversion
@@ -10,7 +11,7 @@ VERSION ?= `python -c "import configparser; config = configparser.ConfigParser()
 
 
 install:
-	pip install .[test];\
+	pip install .[test,rest,git];\
 
 tox:
 	tox;\
