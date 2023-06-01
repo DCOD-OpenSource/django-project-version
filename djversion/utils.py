@@ -38,10 +38,8 @@ def get_version() -> str:  # noqa: CCR001
         ]
     ):
         version = settings.DJVERSION_FORMAT_STRING.format(
-            **{
-                "version": settings.DJVERSION_VERSION,
-                "updated": localize(settings.DJVERSION_UPDATED),
-            }
+            version=settings.DJVERSION_VERSION,
+            updated=localize(settings.DJVERSION_UPDATED),
         )
     elif settings.DJVERSION_VERSION:
         version = settings.DJVERSION_VERSION
@@ -68,7 +66,7 @@ def get_version() -> str:  # noqa: CCR001
                 version = repo.head.commit.hexsha if repo.head.commit else ""
             else:
                 version = ""
-        except Exception:
+        except Exception:  # noqa: PIE786
             version = ""
     else:
         version = ""
