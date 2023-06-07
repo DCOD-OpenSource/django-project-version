@@ -12,20 +12,35 @@ repos:
       name: "removestar"
       stages: ["commit"]
       language: "system"
-      entry: "removestar -i \"${NAME}\" tests"
+      entry: "bash -c 'removestar -i \"${NAME}\" tests'"
       types: ["python"]
+    - id: "autoflake"
+      name: "autoflake"
+      stages: ["commit"]
+      language: "system"
+      entry: "bash -c 'autoflake -r \"${NAME}\" tests'"
+      types: ["python"]
+      pass_filenames: false
     - id: "isort"
       name: "isort"
       stages: ["commit"]
       language: "system"
       entry: "isort"
       types: ["python"]
+    - id: "flynt"
+      name: "flynt"
+      stages: ["commit"]
+      language: "system"
+      entry: "bash -c 'flynt -ll 88 --no-tf \"${NAME}\" tests'"
+      types: ["python"]
+      pass_filenames: false
     - id: "black"
       name: "black"
       stages: ["commit"]
       language: "system"
       entry: "bash -c 'black \"${NAME}\"'"
       types: ["python"]
+      pass_filenames: false
     - id: "yesqa"
       name: "yesqa"
       stages: ["commit"]
@@ -51,6 +66,7 @@ repos:
       language: "system"
       entry: "pylint \"${NAME}\" tests"
       types: ["python"]
+      pass_filenames: false
     - id: "bandit"
       name: "bandit"
       stages: ["commit"]
