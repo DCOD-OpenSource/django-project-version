@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   workflow_call:
 env:
-  DEFAULT_PYTHON_VERSION: "3.12"
+  DEFAULT_PYTHON_VERSION: "3.11"
 jobs:
   check-requirements:
     name: "check-requirements"

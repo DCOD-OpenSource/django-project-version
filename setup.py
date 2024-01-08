@@ -1,11 +1,8 @@
 #!/usr/bin/env python
 
 
-try:
-    import setuptools
-except ImportError:
-    ...
+import setuptools
 
 
-if __name__ == "__main__" and "setuptools" in locals():
+if __name__ == "__main__":
     setuptools.setup()
